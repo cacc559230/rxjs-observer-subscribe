@@ -1,5 +1,4 @@
-import { Subject } from 'rxjs'; 
-import { map } from 'rxjs/operators';
+import { Subject } from "rxjs";
 
 // 建立 youtuber$ subject (被觀察的目標)
 const youtuber$ = new Subject();
@@ -9,9 +8,9 @@ const observerA = {
   next: id => {
     console.log(`訂閱者A收到更新內容 : ${id}`);
   },
-  error: ()=> {},
-  complete: ()=> {}
-}
+  error: () => {},
+  complete: () => {}
+};
 
 // 加入觀察者 A，也就是觀察者 A 開啟通知了
 const observerASubscription = youtuber$.subscribe(observerA);
@@ -22,9 +21,9 @@ const observerB = {
   next: id => {
     console.log(`訂閱者B收到更新內容 : ${id}`);
   },
-  error: ()=> {},
-  complete: ()=> {}
-}
+  error: () => {},
+  complete: () => {}
+};
 const observerBSubscription = youtuber$.subscribe(observerB);
 youtuber$.next(3);
 
